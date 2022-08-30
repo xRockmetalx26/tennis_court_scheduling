@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "510322724470",
+    "project_id": "agendado-canchas",
+    "storage_bucket": "agendado-canchas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:510322724470:android:982e9d57b1db8cdf8e1957",
+        "android_client_info": {
+          "package_name": "com.test.agendamiento_canchas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "510322724470-gqk1v3dtenj5nalb04fgu5vi4huggs6b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.test.agendamiento_canchas",
+            "certificate_hash": "9b0cada14fd014bb85bc6e84c20dcc74a5035429"
+          }
+        },
+        {
+          "client_id": "510322724470-iu97nbu2s07okdb3a76shov15qp88u18.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRx1wXg-0Gsa5Mpo7z-3RK9gMMzgZN6R4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "510322724470-iu97nbu2s07okdb3a76shov15qp88u18.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
