@@ -41,14 +41,13 @@ class _FirstSignUpState extends State<FirstSignUp> {
                 "First you must register with your email to start using the application.",
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 22))),
+        // continue
         Padding(
             padding: EdgeInsets.only(top: height * .05),
             child: PrimaryButton(
                 width: width,
-                onTap: () {
-                  Navigator.of(context)
-                      .pushNamedAndRemoveUntil(Routes.root, (route) => false);
-                },
+                onTap: () => Navigator.of(context).pushNamedAndRemoveUntil(
+                    Routes.isAuthenticated, (route) => false),
                 text: const Text("Continue",
                     style:
                         TextStyle(fontSize: 26, fontWeight: FontWeight.bold))))

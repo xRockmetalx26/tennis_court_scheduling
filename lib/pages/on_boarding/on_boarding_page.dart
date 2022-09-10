@@ -1,21 +1,17 @@
-import 'package:agendamiento_canchas/pages/home/home.dart';
 import 'package:agendamiento_canchas/pages/on_boarding/widgets/forecast.dart';
 import 'package:agendamiento_canchas/pages/on_boarding/widgets/first_sign_up.dart';
 import 'package:agendamiento_canchas/pages/on_boarding/widgets/wellcome.dart';
-import 'package:agendamiento_canchas/services/firebase_authentication.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class OnBoarding extends StatefulWidget {
-  const OnBoarding({Key? key}) : super(key: key);
+class OnBoardingPage extends StatefulWidget {
+  const OnBoardingPage({Key? key}) : super(key: key);
 
   @override
-  State<OnBoarding> createState() => _OnBoardingState();
+  State<OnBoardingPage> createState() => _OnBoardingPageState();
 }
 
-class _OnBoardingState extends State<OnBoarding> {
+class _OnBoardingPageState extends State<OnBoardingPage> {
   @override
   void dispose() {
     super.dispose();
@@ -23,8 +19,7 @@ class _OnBoardingState extends State<OnBoarding> {
   }
 
   @override
-  Widget build(BuildContext context) =>
-      context.watch<User?>() == null ? _view() : const Home();
+  Widget build(BuildContext context) => _view();
 
   Widget _view() {
     final height = MediaQuery.of(context).size.height;

@@ -1,17 +1,19 @@
-import 'package:agendamiento_canchas/pages/on_boarding/on_boarding.dart';
-import 'package:agendamiento_canchas/pages/scheduler/scheduler.dart';
-import 'package:agendamiento_canchas/pages/home/home.dart';
-import 'package:agendamiento_canchas/pages/sign_in/sign_in.dart';
-import 'package:agendamiento_canchas/pages/sign_up/sign_up.dart';
-import 'package:agendamiento_canchas/constants/routes.dart';
-import 'package:agendamiento_canchas/services/firebase_authentication.dart';
-import 'package:agendamiento_canchas/providers/provider_schedules.dart';
-import 'package:agendamiento_canchas/widgets/root.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
+
+import 'package:agendamiento_canchas/pages/on_boarding/on_boarding_page.dart';
+import 'package:agendamiento_canchas/pages/scheduler/scheduler_page.dart';
+import 'package:agendamiento_canchas/pages/home/home.dart';
+import 'package:agendamiento_canchas/pages/sign_in/sign_in_page.dart';
+import 'package:agendamiento_canchas/pages/sign_up/sign_up_page.dart';
+import 'package:agendamiento_canchas/constants/routes.dart';
+import 'package:agendamiento_canchas/roots/is_authenticated.dart';
+import 'package:agendamiento_canchas/roots/skip_on_boarding_root.dart';
+import 'package:agendamiento_canchas/services/firebase_authentication.dart';
+import 'package:agendamiento_canchas/providers/provider_schedules.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -48,14 +50,15 @@ class App extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: "Agendado De Canchas",
-        initialRoute: Routes.onBoarding,
+        initialRoute: Routes.skipOnBoarding,
         routes: {
-          Routes.onBoarding: (context) => const OnBoarding(),
-          Routes.root: (context) => const Root(),
-          Routes.signIn: (context) => const SignIn(),
-          Routes.signUp: (context) => const SignUp(),
-          Routes.home: (context) => const Home(),
-          Routes.addAgendamiento: (context) => const Scheduler()
+          Routes.skipOnBoarding: (context) => const SkipOnBoardingRoot(),
+          Routes.onBoarding: (context) => const OnBoardingPage(),
+          Routes.isAuthenticated: (context) => const IsAuthenticatedRoot(),
+          Routes.signIn: (context) => const SignInPage(),
+          Routes.signUp: (context) => const SignUpPage(),
+          Routes.home: (context) => const HomePage(),
+          Routes.addAgendamiento: (context) => const SchedulerPage()
         });
   }
 }

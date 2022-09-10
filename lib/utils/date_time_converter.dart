@@ -1,6 +1,6 @@
 class DateTimeConverter {
   static DateTime toYMD(DateTime dateTime) {
-    final dateTimeFormatted =
+    DateTime dateTimeFormatted =
         DateTime(dateTime.year, dateTime.month, dateTime.day);
 
     return dateTimeFormatted;

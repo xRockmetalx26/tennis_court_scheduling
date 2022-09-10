@@ -1,20 +1,10 @@
-import 'dart:developer';
 import 'dart:io';
-
-import 'package:agendamiento_canchas/utils/attempt.dart';
+import 'try.dart';
 
 class Files {
-  static Future<File?> write(String filepath, String data, {FileMode mode = FileMode.write}) async {
-    final file = File(filepath);
-    final fileReference = await Attempt.asyncCall<File?>(() async => await file.writeAsString(data));
+  Future<File?> write(String filepath, String data, {FileMode mode = FileMode.write}) async =>
+      await Try.asyncCall(() async => await File(filepath).writeAsString(data));
 
-    return fileReference;
-  }
-
-  static Future<String?> read(String filepath) async {
-    final file = File(filepath);
-    final data = await Attempt.asyncCall<String?>(() async => await file.readAsString());
-
-    return data;
-  }
+  Future<String?> read(String filepath) async =>
+      await Try.asyncCall(() async => await File(filepath).readAsString());
 }

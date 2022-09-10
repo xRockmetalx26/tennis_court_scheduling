@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +32,7 @@ class Home extends StatelessWidget {
                 title: const Text("Tennis Courts"),
                 backgroundColor: Colors.green.shade900,
                 actions: [
+                  // sign out
                   IconButton(
                       onPressed: () async =>
                           await FirebaseAuth.instance.signOut(),

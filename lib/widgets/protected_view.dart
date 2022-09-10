@@ -14,7 +14,7 @@ class ProtectedView extends StatelessWidget {
 
     return Scaffold(
       body: GestureDetector(
-                    onTap: () => FocusManager.instance.primaryFocus!.unfocus(),
+        onTap: () => FocusManager.instance.primaryFocus!.unfocus(),
         child: Container(
             width: width,
             height: height,
@@ -22,16 +22,17 @@ class ProtectedView extends StatelessWidget {
                 gradient: LinearGradient(
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
-                    colors: (_leftColor != null && _rightColor != null)
-                        ? [_leftColor!, _rightColor!]
-                        : [Colors.white, Colors.white])),
+                    colors: [
+                  _leftColor ?? Colors.white,
+                  _rightColor ?? Colors.white
+                ])),
             child: SafeArea(
                 child: SingleChildScrollView(
-                  physics: const AlwaysScrollableScrollPhysics(),
+                    physics: const AlwaysScrollableScrollPhysics(),
                     child: SizedBox(
-                      width: width,
-                      height: height - MediaQuery.of(context).padding.top,
-                      child: _view())))),
+                        width: width,
+                        height: height - MediaQuery.of(context).padding.top,
+                        child: _view())))),
       ),
     );
   }

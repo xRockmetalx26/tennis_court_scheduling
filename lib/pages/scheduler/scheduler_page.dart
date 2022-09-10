@@ -9,14 +9,14 @@ import 'package:agendamiento_canchas/widgets/protected_view.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class Scheduler extends StatefulWidget {
-  const Scheduler({Key? key}) : super(key: key);
+class SchedulerPage extends StatefulWidget {
+  const SchedulerPage({Key? key}) : super(key: key);
 
   @override
-  State<Scheduler> createState() => _SchedulerState();
+  State<SchedulerPage> createState() => _SchedulerPageState();
 }
 
-class _SchedulerState extends State<Scheduler> {
+class _SchedulerPageState extends State<SchedulerPage> {
   @override
   Widget build(BuildContext context) {
     print("builded scheduler");
